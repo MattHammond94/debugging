@@ -19,10 +19,6 @@ class VowelRemover
   def remove_vowels
     @text.gsub(/[aeiou]/, "")
   end
-  
   # ^^^Alternate solution^^^
 
 end
-
-a = VowelRemover.new("aeiou")
-a.remove_vowels
