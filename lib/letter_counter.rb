@@ -16,7 +16,7 @@ class LetterCounter
         most_common_count += (counter[char] - 1)
       end
     end
-    return [most_common_count, most_common]
+    return [counter[most_common], most_common]
   end
 
   private
