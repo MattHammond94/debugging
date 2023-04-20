@@ -3,14 +3,17 @@ class LetterCounter
     @text = text
   end
 
-  
+  def calculate_most_common_2
+    @text.gsub(/\W/, "").chars.tally.max_by { |k, v| v }.reverse.to_a
+  end
+
   def calculate_most_common
     counter = Hash.new(0)
     most_common = nil
     most_common_count = 1
     @text.chars.each do |char|
       next unless is_letter?(char)
-      counter[char] = (counter[char] || 1) + 1
+      counter[char] += 1
       if counter[char] > most_common_count
         most_common = char
         most_common_count += (counter[char] - 1)
